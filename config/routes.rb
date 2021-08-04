@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users
   resources :shows
-  resources :review
-  reviews :watch_later
+  resources :reviews
+  resources :watch_later
 end
