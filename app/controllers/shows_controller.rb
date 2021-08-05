@@ -1,4 +1,5 @@
 class ShowsController < ApplicationController
+    #before_action :require_login
 
     def index
         @shows = Show.all
