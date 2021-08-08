@@ -1,0 +1,22 @@
+<p>
+<strong>Title:</strong>
+<%= @show.title %>
+</p>
+<p>
+<strong>Genre:</strong>
+<%= @show.genre %>
+</p>
+<p>
+<strong>Description:</strong>
+<%= @show.description %>
+</p>
+<p>
+<strong>Seasons:</strong>
+<%= @show.seasons %>
+</p>
+<p>
+<strong>Rating:</strong>
+<%= @show.rating %>
+</p>
+<%= link_to 'Edit', edit_show_path(@show) %> |
+<%= link_to 'Back', shows_path %>

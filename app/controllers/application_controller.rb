@@ -1,16 +1,18 @@
 class ApplicationController < ActionController::Base
 
-    def welcome
-        redirect_to controller: 'sessions', action: 'new' unless session[:name]
+    helper_method :current_user
+    helper_method :logged_in? 
+    before_action :require_login
+
+    def logged_in?
+        session[:user_id] 
+    end    
+
+    def require_login
+        if !logged_in?
+        redirect_to login_path
     end
-    
+
     def current_user
-        session[:name]
+        @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
-    
-    private
-    
-    def require_logged_in
-        redirect_to controller: 'sessions', action: 'new' unless current_user
-    end
-end

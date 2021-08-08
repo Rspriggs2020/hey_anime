@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get 'secrets/new'
 
   root 'application#welcome'
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
+  get '/login', to: 'sessions#new', as: 'login'
+  post '/sessions', to: 'sessions#create', as: 'sessions'
+  delete '/sessions', to: 'sessions#destroy'
 
   get '/secret' => 'secrets#show'
 end
