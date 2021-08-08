@@ -1,0 +1,9 @@
+<div>
+<%  if user_signed_in? %>
+<li><%= link_to "New Show"</li>
+<li><%= link_to "Account"</li>
+<% else %>
+<li><%= link_to "Sign Up"</li>
+<li><%= link_to "Sign In"</li>
+<% end %>
+</div>
