@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   resources :watch_later
   
   get 'secrets/new'
+  get 'signup'  => 'users#new'
+  get '/login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
   root 'application#welcome'
-  get '/login', to: 'sessions#new', as: 'login'
-  post '/sessions', to: 'sessions#create', as: 'sessions'
-  delete '/sessions', to: 'sessions#destroy'
+
+
 
   get '/secret' => 'secrets#show'
 end
