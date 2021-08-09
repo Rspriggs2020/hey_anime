@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :require_login, only:[:new, :create]
+    #skip_before_action :require_login, only:[:new, :create]
 
     def new
         @user = User.new 
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        if user.valid?
+        if @user.valid?
         @user.save
         session[:user_id] = @user.id
         redirect_to user_path(@user)
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     def show
         if User.find_by(id: params[:id]) && session[:user_id]
             @user = User.find_by(id: params[:id])
-            render :show
+            render 'show'
         else
             redirect_to '/'
         end
