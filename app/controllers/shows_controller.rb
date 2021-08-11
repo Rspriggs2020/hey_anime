@@ -14,7 +14,7 @@ class ShowsController < ApplicationController
     end
 
     def new
-        @movie = Movie.new
+        @show = Show.new
     end
 
     def show
