@@ -1,12 +1,11 @@
 <div class="login">
     <div class="container">
         <div class="form">
-        <h1>Sign Up</h1>
         <%= form_for(@user) do |f| %>
         <%= f.text_field :username, :placeholder => "username" %>
         <%= f.email_field :email, :placeholder => "Email" %>
         <%= f.password_field :password, :placeholder => "Password" %>
-        <%= f.submit "Create an account", class: "btn-submit" %>
+        <%= f.submit "Login", class: "btn-submit" %>
         <% end %>
         </div>
     </div>
