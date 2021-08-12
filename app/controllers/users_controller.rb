@@ -34,7 +34,9 @@ class UsersController < ApplicationController
       #  redirect_to '/'
     #end
 
-    def sign_up
+
+
+    def signup
         @user = User.new(user_params)
         if @user.save 
             session[:user_id] = @user.id 

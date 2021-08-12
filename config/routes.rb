@@ -4,16 +4,27 @@ Rails.application.routes.draw do
   resources :reviews
   resources :watch_later
   
-  get 'secrets/new'
-  get 'signup'  => 'users#new'
-  get '/login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#logout'
-  get '/logout' => 'sessions#logout'
+  #get 'secrets/new'
+  #get 'signup'  => 'users#new'
+  #get '/login' => 'sessions#new'
+  #post 'login' => 'sessions#create'
+  #delete 'logout' => 'sessions#logout'
+  #get '/logout' => 'sessions#logout'
 
-  root 'application#welcome'
+  root 'sessions#welcome'
+
+  get '/signup', to: 'sessions#signup'
+  post '/signup', to: 'users#signup'
+
+  get '/login', to: 'sessions#login'
+  post '/signin', to: 'sessions#signin'
+
+  delete '/logout', to: 'sessions#logout'
+  get '/logout', to: 'sessions#logout'
+  
 
 
 
-  get '/secret' => 'secrets#show'
+
+  #get '/secret' => 'secrets#show'
 end
