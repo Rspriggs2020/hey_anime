@@ -10,7 +10,7 @@ class ShowsController < ApplicationController
     end
 
     def index
-        @shows = Show.all
+        @shows = Show.all.order(:title)
     end
 
     def new
