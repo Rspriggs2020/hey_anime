@@ -1,0 +1,6 @@
+<% if show.errors.any? %>
+<h1><%= pluralize(show.erros.count, "error") %><br>
+<% show.error.each do |e|
+    <%= error.message %>
+    <% end %>
+    <% end %>

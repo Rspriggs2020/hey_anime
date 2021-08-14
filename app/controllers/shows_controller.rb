@@ -27,7 +27,7 @@ class ShowsController < ApplicationController
     def create
         @show = Show.new(show_params)
         if @show.save
-            redirect_to @movie 
+            redirect_to @show 
         else
             render 'new'
         end
@@ -42,7 +42,7 @@ class ShowsController < ApplicationController
     end
 
     def destroy
-        @show.destory
+        show.delete
         redirect_to shows_path
     end
 

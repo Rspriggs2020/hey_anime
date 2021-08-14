@@ -1,22 +1,11 @@
-<p>
-<strong>Title:</strong>
-<%= @show.title %>
-</p>
-<p>
-<strong>Genre:</strong>
-<%= @show.genre %>
-</p>
-<p>
-<strong>Description:</strong>
-<%= @show.description %>
-</p>
-<p>
-<strong>Seasons:</strong>
-<%= @show.seasons %>
-</p>
-<p>
-<strong>Rating:</strong>
-<%= @show.rating %>
-</p>
-<%= link_to 'Edit', edit_show_path(@show) %> |
+<h1>Title:</h1>
+    <%= @show.title %>
+<h1>Genre:</h1>
+    <%= @show.genre %>
+<h1>Description:</h1>
+    <%= @show.description %>
+<h1>Seasons: <%= @show.seasons %></h1>
+<h1>Rating: <%= @show.rating %></h1>
+
+<%= link_to "Delete", show_path(@show), method: :delete %>
 <%= link_to 'Back', shows_path %>

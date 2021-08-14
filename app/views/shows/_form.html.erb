@@ -12,22 +12,22 @@
     </div>
     <% end %>
     <%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Title", required: true%>
     </div>
     <%= f.label :genre %><br>
-    <%= f.text_field :genre, class: "form-control", placeholder: "Genre" %>
+    <%= f.text_field :genre, class: "form-control", placeholder: "Genre", required: true%>
     </div>
     <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description, class: "form-control", placeholder: "Description" %>
+    <%= f.text_area :description, class: "form-control", placeholder: "Description", required: true%>
     </div>
     <div class="field">
     <%= f.label :seasons %><br>
-    <%= f.text_field :seasons, class: "form-control", placeholder: "Seasons" %>
+    <%= f.text_field :seasons, class: "form-control", placeholder: "Seasons", required: true%>
     </div>
     <div class="field">
     <%= f.label :rating %><br>
-    <%= f.text_field :rating, class: "form-control", placeholder: "Rating" %>
+    <%= f.text_field :rating, class: "form-control", placeholder: "Rating", required: true%>
     </div>
     <div class="actions">
     <%= f.submit %>
