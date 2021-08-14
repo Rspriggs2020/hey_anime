@@ -6,21 +6,18 @@
     <% @show.errors.messages.each do |message| %>
     <li><%= message %></li>
     <% end %>
-    
+
     <%= f.label :title %><br>
-    <%= f.text_field :title, class: "form-control", placeholder: "Title", required: true%>
-    <
+    <%= f.text_field :title, placeholder: "Title", required: true%>
     <%= f.label :genre %><br>
-    <%= f.text_field :genre, class: "form-control", placeholder: "Genre", required: true%>
-    
+    <%= f.text_field :genre, placeholder: "Genre", required: true%>
     <%= f.label :description %><br>
-    <%= f.text_area :description, class: "form-control", placeholder: "Description", required: true%>
-    
+    <%= f.text_area :description, placeholder: "Description", required: true%>
     <%= f.label :seasons %><br>
-    <%= f.text_field :seasons, class: "form-control", placeholder: "Seasons", required: true%>
+    <%= f.text_field :seasons, placeholder: "Seasons", required: true%>
     
     <%= f.label :rating %><br>
-    <%= f.text_field :rating, class: "form-control", placeholder: "Rating", required: true%>
+    <%= f.text_field :rating, placeholder: "Rating", required: true%>
    
     <%= f.submit %>
     
