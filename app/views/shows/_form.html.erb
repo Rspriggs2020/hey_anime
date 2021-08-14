@@ -1,35 +1,27 @@
 <%= form_for @show do |f|%>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <div class="form-group">
     <% if @show.errors.any? %>
-    <div id="error_explanation">
     <h2><%= pluralize(@show.errors.count, "error") %></h2>
     <ul>
-    <% @show.errors.full_messages.each do |message| %>
+    <% @show.errors.messages.each do |message| %>
     <li><%= message %></li>
     <% end %>
-    </ul>
-    </div>
-    <% end %>
+    
     <%= f.label :title %><br>
     <%= f.text_field :title, class: "form-control", placeholder: "Title", required: true%>
-    </div>
+    <
     <%= f.label :genre %><br>
     <%= f.text_field :genre, class: "form-control", placeholder: "Genre", required: true%>
-    </div>
-    <div class="field">
+    
     <%= f.label :description %><br>
     <%= f.text_area :description, class: "form-control", placeholder: "Description", required: true%>
-    </div>
-    <div class="field">
+    
     <%= f.label :seasons %><br>
     <%= f.text_field :seasons, class: "form-control", placeholder: "Seasons", required: true%>
-    </div>
-    <div class="field">
+    
     <%= f.label :rating %><br>
     <%= f.text_field :rating, class: "form-control", placeholder: "Rating", required: true%>
-    </div>
-    <div class="actions">
+   
     <%= f.submit %>
-    </div>
+    
     <% end %>
