@@ -25,7 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 #omniauth
 gem 'omniauth'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-google-oauth2', '~> 1.0'
 gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 

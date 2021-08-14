@@ -42,12 +42,14 @@ class SessionsController < ApplicationController
     end
 
     def omniauth 
-        user = User.from_google_omniauth(auth)
+        user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
+            u.email = auth['info']['email']
+            u.username = auth['info']['name']
+            u.password = SecureRandom.hex(15)
+        end
         if user.valid?
             session[:user_id] = user.id
             flash[:message] = "Logging In!"
-            redirect_to users_path
-        else
             redirect_to login_path
         end
     end
