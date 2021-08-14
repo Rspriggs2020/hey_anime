@@ -53,6 +53,6 @@ class ShowsController < ApplicationController
     end
 
     def set_show
-        @show = Show.find(params[:id])
+        @show = Show.find_by(params[:id])
     end
 end

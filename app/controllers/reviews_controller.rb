@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    before_action :set_show
+    #before_action :set_show
     before_action :set_review, only:[:show, :edit, :update, :destory]
 
     def index 
@@ -49,14 +49,14 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:rating, :comment)
+        params.require(:review).permit(:rating, :comment, :show_id, :user_id)
     end
 
     def set_review
         @review = Review.find(params[:id])
     end
 
-    def set_show
-        @show = Show.find(params[:show_id])
-    end
+    #def set_show
+     #   @show = Show.find(params[:show_id])
+    #end
 end

@@ -7,5 +7,6 @@
 <h1>Seasons: <%= @show.seasons %></h1>
 <h1>Rating: <%= @show.rating %></h1>
 
-<%= link_to "Delete", show_path(@show), method: :delete %>
+<!----<%= link_to 'Back', welcome_path %> not trying to delete already created show --------!>
+<%= link_to 'Reviews', reviews_path %>
 <%= link_to 'Back', shows_path %>
