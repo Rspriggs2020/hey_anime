@@ -25,7 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
 #omniauth
 gem 'omniauth', '~> 2.0'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
-gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem "figaro"
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
