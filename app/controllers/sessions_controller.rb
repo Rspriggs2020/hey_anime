@@ -41,10 +41,14 @@ class SessionsController < ApplicationController
         redirect_to root_path
     end
 
-    def callback
-        user = User.find_or_create_with_omniauth!
-        session[:user_id] = user.id
-        redirect_to root_path
+    def omniauth 
+        user = User.from_omniauth(request.env['omniauth.auth'])
+        if user.valid?
+            session[:user_id] = user.id
+            redirect_to user_path(user)
+        else
+            redirect_to '/login'
+        end
     end
 
     private
