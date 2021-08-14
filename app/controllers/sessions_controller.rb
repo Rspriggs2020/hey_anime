@@ -50,7 +50,7 @@ class SessionsController < ApplicationController
         if user.valid?
             session[:user_id] = user.id
             flash[:message] = "Logging In!"
-            redirect_to login_path
+            redirect_to shows_path
         end
     end
 
