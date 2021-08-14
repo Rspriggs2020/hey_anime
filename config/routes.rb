@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #get '/logout' => 'sessions#logout'
 
   root 'sessions#welcome'
-
+  get '/welcome', to: 'sessions#welcome'
   get '/signup', to: 'sessions#signup'
   post '/signup', to: 'users#signup'
 
