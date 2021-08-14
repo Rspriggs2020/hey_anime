@@ -1,16 +1,11 @@
 <h1>Animes</h1>
 
 <% @shows.each do |show| %>
-<tr>
  <td><%= show.title %></td><br>
- <td><%= show.genre %></td><br>
-<td><%= show.description %></td><br>
-<h1>Seasons:</h1> <td><%= show.seasons %></td><br>
-<h1>Rating:</h1><td><%= show.rating %></td><br>
-<td><%= link_to 'Details', show %></td>
+
+<td><%= link_to 'Details', show %></td><br>
 
 
-</tr>
 <% end %>
 </tbody>
 </table>
