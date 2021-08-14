@@ -41,12 +41,15 @@ class SessionsController < ApplicationController
         redirect_to root_path
     end
 
-    def omniauth
+    def callback
+        user = User.find_or_create_with_omniauth!
+        session[:user_id] = user.id
+        redirect_to root_path
     end
 
     private
 
     def authorize
-        request.env['omniauth.auth']
+        request.env[‘omniauth.auth’]
     end
 end
