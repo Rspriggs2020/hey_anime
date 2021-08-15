@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   resources :users
   resources :shows
-  resources :reviews, except: [:index, :show]
+  resources :reviews
   resources :watch_later
   
 
   root 'sessions#welcome'
+
+  #root 'shows#index'
 
   get '/welcome', to: 'sessions#welcome'
   get '/signup', to: 'sessions#signup'

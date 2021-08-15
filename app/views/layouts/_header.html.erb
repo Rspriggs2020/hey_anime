@@ -1,4 +1,4 @@
-
-
-
-
+<% if logged_in? %>
+    <li><%= link_to "Animes", shows_path, class: "active" %></li>
+    <li><%= link_to "Your Reviews", reviews_path, class: "active" %></li>
+<% end %>
