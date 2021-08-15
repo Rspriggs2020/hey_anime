@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
   resources :users
   resources :shows
-  resources :reviews
+  resources :reviews, except: [:index, :show]
   resources :watch_later
   
-  #get 'secrets/new'
-  #get 'signup'  => 'users#new'
-  #get '/login' => 'sessions#new'
-  #post 'login' => 'sessions#create'
-  #delete 'logout' => 'sessions#logout'
-  #get '/logout' => 'sessions#logout'
 
   root 'sessions#welcome'
+
   get '/welcome', to: 'sessions#welcome'
   get '/signup', to: 'sessions#signup'
   post '/signup', to: 'users#signup'
@@ -24,13 +19,9 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#omniauth'
 
-
-
-  #root 'shows#index'
+  get '/reviews', to: 'reviews#show'
+  get '/reviews/:id', to: 'reviews#show'
   
-
-
-
-
-  #get '/secret' => 'secrets#show'
+  post '/shows/:id/reviews/new', to: 'shows#new'
+  
 end

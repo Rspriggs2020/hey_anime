@@ -1,5 +1,8 @@
 class ShowsController < ApplicationController
     #before_action :require_login
+    before_action :set_show, only: [:show, :edit, :update, :destroy]
+    #before_action :authenticate_user!, except: [:index, :show]
+    
 
     def search
         if params[:search].present?
@@ -10,15 +13,11 @@ class ShowsController < ApplicationController
     end
 
     def index
-        @shows = Show.all.order(:title)
+        @shows = Show.all
     end
 
     def new
         @show = Show.new
-    end
-
-    def show
-        @show = Show.find(params[:id])
     end
 
     def edit
@@ -43,16 +42,20 @@ class ShowsController < ApplicationController
 
     def destroy
         show.delete
-        redirect_to shows_path
+    end
+
+    def show
+        @reviews = Review.where(show_id: @show.id).order("created_at DESC")
     end
 
     private 
 
     def show_params
-        params.require(:show).permit(:title, :genre, :description, :seasons, :rating, :user_id)
+        params.require(:show).permit(:title, :genre, :description, :seasons, :rating)
     end
 
+
     def set_show
-        @show = Show.find_by(params[:id])
+       @show = Show.find(params[:id])
     end
 end

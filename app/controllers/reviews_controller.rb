@@ -1,29 +1,18 @@
 class ReviewsController < ApplicationController
-    #before_action :set_show
-    before_action :set_review, only:[:show, :edit, :update, :destory]
-
-    def index 
-        @reviews = Review.all 
-    end
+  #  before_action :set_show
+    before_action :set_review, only: [:show, :edit, :update, :destroy]
+    before_action :set_show
+    #before_action :authenticate_user!
 
     def new 
         @review = Review.new
     end
 
     def show
-        if @review.user_id == current_user.id
-            render 'show'
-        else
-            redirect_to show_path(@show)
-        end
+      
     end
 
     def edit
-        if @review.user_id == current_user.id
-            render 'edit'
-        else
-            redirect_to show_path(@show)
-        end
     end
 
     def create
@@ -49,14 +38,14 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:rating, :comment, :show_id, :user_id)
+        params.require(:review).permit(:rating, :comment)
     end
 
     def set_review
-        @review = Review.find(params[:id])
+       @review = Review.find_by(params[:id])
     end
 
-    #def set_show
-     #   @show = Show.find(params[:show_id])
-    #end
+    def set_show
+       @show = Show.find_by(params[:show_id])
+    end
 end
