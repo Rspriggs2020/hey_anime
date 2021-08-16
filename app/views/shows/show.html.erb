@@ -7,5 +7,6 @@
 <h1>Seasons: <%= @show.seasons %></h1>
 <h1>Rating: <%= @show.rating %></h1>
 
-<%= link_to 'Reviews', reviews_path(@review) %>
+<%= link_to 'New Review', new_review_path(@review) %>
+
 <%= link_to 'Back', shows_path %>

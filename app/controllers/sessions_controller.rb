@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
         @user = User.new
     end
 
-
     def signin
         @user = User.find_by(email: params[:user][:email])
         if @user && @user.authenticate(params[:user][:password])
@@ -16,10 +15,6 @@ class SessionsController < ApplicationController
             redirect_to login_path
         end
     end
-
-    #def new
-     #   @user = User.new
-    #end
 
     def login
         @user = User.new

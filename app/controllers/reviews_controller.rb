@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
     def index 
         @reviews = Review.all
     end
+
     def new 
         @review = Review.new
     end
@@ -27,15 +28,14 @@ class ReviewsController < ApplicationController
 
     def create
         @review = Review.create(review_params)
-        @review.user_id = current_user.id 
+        @review.user_id = current_user.id
         @review.show_id = @show.id
-
-        if @review.save
-           redirect_to @review 
-        else
-           render 'new'
-        end
-    end
+          if @review.save
+            redirect_to @show, notice: 'Review was successfully created.'
+          else
+            render 'new'
+          end
+      end
 
     def update
         @review.update(review_params)
@@ -47,7 +47,10 @@ class ReviewsController < ApplicationController
     end
 
     def show
-       render 'show'
+        if @review.blank?
+            redirect_to new_review_path
+        end
+       
     end
 
 

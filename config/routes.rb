@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   resources :users
-  resources :shows
+  #resources :shows
   resources :reviews
   resources :watch_later
+
+  resources :shows do
+    collection do
+        get 'search'
+    end
+    resources :reviews
+
+end
   
 
   root 'sessions#welcome'

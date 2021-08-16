@@ -43,8 +43,6 @@ class ShowsController < ApplicationController
 
     def show
         @reviews = Review.where(show_id: @show.id).order("created_at DESC")
-   
-
     end
 
     private 
