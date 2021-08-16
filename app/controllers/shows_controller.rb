@@ -1,8 +1,5 @@
 class ShowsController < ApplicationController
-    #before_action :require_login
     before_action :set_show, only: [:show, :edit, :update, :destroy]
-    #before_action :authenticate_user!, except: [:index, :show]
-    
 
     def search
         if params[:search].present?
@@ -46,6 +43,8 @@ class ShowsController < ApplicationController
 
     def show
         @reviews = Review.where(show_id: @show.id).order("created_at DESC")
+   
+
     end
 
     private 
@@ -53,7 +52,6 @@ class ShowsController < ApplicationController
     def show_params
         params.require(:show).permit(:title, :genre, :description, :seasons, :rating)
     end
-
 
     def set_show
        @show = Show.find(params[:id])

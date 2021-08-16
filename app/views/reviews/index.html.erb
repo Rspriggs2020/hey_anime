@@ -1,2 +1,16 @@
-<h1> Your Reviews</h1>
-<%= link_to 'Back', shows_path %>
+<h1>Your Reviews</h1>
+<%= @show.title %>
+<table>
+<tbody>
+  <% @reviews.each do |review| %>
+  <tr>
+  <h2>Comment: <%= review.comment %></h2>
+  <h2>Rating: <%= review.rating %></h2>
+  <%= link_to "#{review.comment}", review_path(review) %>
+  <% end %>
+  </tr>
+  </tbody>
+  </table>
+
+
+<%= link_to 'Back', show_path(@show)%>  

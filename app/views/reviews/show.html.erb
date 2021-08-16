@@ -1,8 +1,11 @@
 <h1><%= @show.title %></h1>
-<h2>Comment:</h2>   <%= @review.comment %></h2>
-<h2>Rating:</h2>   <%= @review.rating %></h2>
 
+<h2>Comment:</h2>
+<h3><%= @review.comment %><br></h3>
+<h2>Rating:</h2>
+<h3><%= @review.rating %><br></h3>
 
-<%= link_to 'Back', shows_path %>
 <%= link_to 'New', new_review_path(@review) %>
-<%= link_to 'Edit', edit_review_path(@review) %>
+<%= link_to 'Edit', edit_review_path(@review) %> 
+<%= link_to "Delete", review_path(@review), method: :delete %>
+<%= link_to 'Back', show_path(@show)%>

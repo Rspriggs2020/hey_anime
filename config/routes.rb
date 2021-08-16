@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   root 'sessions#welcome'
 
-  #root 'shows#index'
-
   get '/welcome', to: 'sessions#welcome'
   get '/signup', to: 'sessions#signup'
   post '/signup', to: 'users#signup'
@@ -21,9 +19,10 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#omniauth'
 
-  get '/reviews', to: 'reviews#show'
-  get '/reviews/:id', to: 'reviews#show'
+  get '/reviews', to: 'reviews#index'
+  get '/reviews/:id/edit', to: 'reviews#edit'
+  get '/reviews/:id', to: 'reviews#index'
   
-  post '/shows/:id/reviews/new', to: 'shows#new'
+  #post '/shows/:id/reviews/new', to: 'shows#new'
   
 end

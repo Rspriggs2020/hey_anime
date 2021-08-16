@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2021_08_02_233724) do
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "rating"
     t.string "comment"
+    t.integer "rating"
     t.integer "user_id"
     t.integer "show_id"
     t.datetime "created_at", precision: 6, null: false
