@@ -1,24 +1,7 @@
-# README
+Hey, Anime!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to my Ruby on Rails project!
 
-Things you may want to cover:
+The project contains an A-Z collective of my favorite Anime titles, as well as information on the series.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To check it out, clone the repo to your terminal and sign up to get started!
