@@ -1,12 +1,16 @@
 class UsersController < ApplicationController
     
+    def new 
+        @user = User.new
+    end
+
     def signup
         @user = User.new(user_params)
-        if @user.save 
-            session[:user_id] = @user.id 
-            redirect_to shows_path
+        if @user.save
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
         else
-            render 'sessions/signup'
+            render :new
         end
     end
 
